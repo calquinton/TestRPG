@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://object_scenes/Chest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/8BIT CanariPack TopDown/TILESET/PixelPackTOPDOWN8BIT.png" type="Texture" id=3]
+[ext_resource path="res://object_scenes/Mushroom.tscn" type="PackedScene" id=4]
+
+[sub_resource type="TileSet" id=1]
+0/name = "PixelPackTOPDOWN8BIT.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 256, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 1 ), 256, Vector2( 0, 2 ), 260, Vector2( 0, 3 ), 4, Vector2( 1, 1 ), 320, Vector2( 1, 2 ), 325, Vector2( 1, 3 ), 5, Vector2( 2, 1 ), 64, Vector2( 2, 2 ), 65, Vector2( 2, 3 ), 1, Vector2( 6, 2 ), 325 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="World" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GrassTileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 65536, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 8, 0, 65537, 9, 0, 65538, 65536, 0, 131072, 65537, 0, 131078, 65538, 0, 131078, 65539, 0, 131073, 65540, 0, 131078, 65541, 0, 131078, 65542, 0, 131078, 65543, 0, 131073, 65544, 0, 131078, 65545, 0, 131074, 131072, 0, 131072, 131073, 0, 131078, 131074, 0, 131073, 131075, 0, 131073, 131076, 0, 131078, 131077, 0, 131073, 131078, 0, 131078, 131079, 0, 131073, 131080, 0, 131078, 131081, 0, 131074, 196608, 0, 131072, 196609, 0, 131073, 196610, 0, 131073, 196611, 0, 131073, 196612, 0, 131073, 196613, 0, 131078, 196614, 0, 131078, 196615, 0, 131078, 196616, 0, 131073, 196617, 0, 131074, 262144, 0, 131072, 262145, 0, 131078, 262146, 0, 131078, 262147, 0, 131073, 262148, 0, 131078, 262149, 0, 131078, 262150, 0, 131073, 262151, 0, 131073, 262152, 0, 131073, 262153, 0, 131074, 327680, 0, 196608, 327681, 0, 196609, 327682, 0, 196609, 327683, 0, 196609, 327684, 0, 196609, 327685, 0, 196609, 327686, 0, 196609, 327687, 0, 196609, 327688, 0, 196609, 327689, 0, 196610 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 82, 45 )
+
+[node name="Chest" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 59, 19 )
+
+[node name="Mushroom2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 47, 53 )
+
+[node name="Mushroom" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 133, 77 )
